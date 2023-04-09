@@ -8,7 +8,7 @@ const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
       authClient={keycloak}
       autoRefreshToken={true}
       initOptions={{
-        onLoad: 'none',
+        onLoad: 'check-sso',
         pkce: 's256',
       }}>
       {children}

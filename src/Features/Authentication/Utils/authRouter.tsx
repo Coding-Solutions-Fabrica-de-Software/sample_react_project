@@ -15,11 +15,11 @@ export const AuthRouter: FC<IAuthRouter> = (props) => {
       return null;
     } else if (props.userRole) {
       if (!keycloak.hasRealmRole(props.userRole)) {
-        return <Navigate to={'/'} replace />;
+        return <Navigate to={'/no-authorized'} replace />;
       }
     }
   } else {
-    return <Navigate to={'/'} replace />;
+    return <Navigate to={'/no-authorized'} replace />;
   }
 
   return <Outlet />;

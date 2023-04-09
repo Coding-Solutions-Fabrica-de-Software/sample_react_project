@@ -9,15 +9,9 @@ const { Header } = Layout;
 
 const NavBar: FC = () => {
   const {
-    keycloak: { authenticated, profile, loadUserProfile },
+    keycloak: { authenticated, tokenParsed },
     initialized,
   } = useKeycloak();
-
-  useEffect(() => {
-    if (initialized && authenticated && !profile) {
-      loadUserProfile();
-    }
-  }, [initialized]);
 
   const login = useCallback(() => {
     keycloak.login();
@@ -30,7 +24,7 @@ const NavBar: FC = () => {
   return (
     <Header className={styles.navBar}>
       Seja bem-vindo{authenticated ? ' - ' : ''}
-      {profile?.firstName || profile?.username}
+      {tokenParsed?.preferred_username}
       <Dropdown
         className={styles.menu}
         menu={{

@@ -66,7 +66,7 @@ const HomePage: FC = () => {
             key={`item-${index}`}
             actions={[
               <Link
-                to={`/detail/${item.id}${item.vote_average > 8.6 ? '/admin' : ''}`}
+                to={`/detail${item.vote_average > 8.5 ? '-admin' : ''}/${item.id}`}
                 key="list-loadmore-more">
                 Ver Detalhes
               </Link>,

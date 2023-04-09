@@ -3,16 +3,21 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './Movies/Home';
 import { AuthRouter } from '@features';
 import DetailsMoviePage from './Movies/Details';
+import NoAuthorizedPage from './Auth/NoAuthorized';
 
 const MainSwitch: FC = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route element={<AuthRouter userRole="admin" />}>
-          <Route path="/detail/:id" element={<DetailsMoviePage />} />
+        <Route path="/no-authorized" element={<NoAuthorizedPage />} />
 
-          <Route path="/detail/:id/admin" element={<DetailsMoviePage />} />
+        <Route element={<AuthRouter userRole="admin" />}>
+          <Route path="/detail-admin/:id" element={<DetailsMoviePage />} />
+        </Route>
+
+        <Route element={<AuthRouter />}>
+          <Route path="/detail/:id" element={<DetailsMoviePage />} />
         </Route>
       </Routes>
     </Router>

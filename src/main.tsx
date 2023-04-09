@@ -6,13 +6,11 @@ import ShellHost from '@pages';
 import { ThemeProvider } from './Features/Theme';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <ReduxProvider>
-      <ThemeProvider>
-        <AuthProvider>
-          <ShellHost />
-        </AuthProvider>
-      </ThemeProvider>
-    </ReduxProvider>
-  </React.StrictMode>
+  <ReduxProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <ShellHost />
+      </AuthProvider>
+    </ThemeProvider>
+  </ReduxProvider>
 );
