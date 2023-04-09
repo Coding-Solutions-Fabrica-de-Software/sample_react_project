@@ -1,3 +1,4 @@
+import { AuthRouter } from "./authRouter";
 import keycloak from "./config";
 
-export { keycloak };
+export { keycloak, AuthRouter };

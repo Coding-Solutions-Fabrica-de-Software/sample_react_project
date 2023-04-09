@@ -1,6 +1,6 @@
 import { ReactKeycloakProvider } from '@react-keycloak/web';
 import { FC, PropsWithChildren } from 'react';
-import { keycloak } from './Utils';
+import { AuthRouter, keycloak } from './Utils';
 
 const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
   return (
@@ -9,10 +9,11 @@ const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
       autoRefreshToken={true}
       initOptions={{
         onLoad: 'none',
+        pkce: 's256',
       }}>
       {children}
     </ReactKeycloakProvider>
   );
 };
 
-export { AuthProvider, keycloak };
+export { AuthProvider, keycloak, AuthRouter };

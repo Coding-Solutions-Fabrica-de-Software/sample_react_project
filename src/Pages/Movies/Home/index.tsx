@@ -56,6 +56,8 @@ const HomePage: FC = () => {
             title: x.title,
             imageUri: `${import.meta.env.VITE_DB_MOVIE_IMAGE_URI}/${x.backdrop_path}`,
             description: x.overview,
+            id: x.id,
+            vote_average: x.vote_average,
           };
         })}
         loadMore={loadMore}
@@ -63,14 +65,16 @@ const HomePage: FC = () => {
           <List.Item
             key={`item-${index}`}
             actions={[
-              <Link to="/" key="list-loadmore-more">
+              <Link
+                to={`/detail/${item.id}${item.vote_average > 8.6 ? '/admin' : ''}`}
+                key="list-loadmore-more">
                 Ver Detalhes
               </Link>,
             ]}>
             <Skeleton avatar title={false} loading={movies.isLoading} active>
               <List.Item.Meta
                 avatar={<Avatar src={item.imageUri} />}
-                title={`${item.title}`}
+                title={`${item.title} - ${item.vote_average}`}
                 description={item.description}
               />
             </Skeleton>

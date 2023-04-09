@@ -30,7 +30,7 @@ const NavBar: FC = () => {
   return (
     <Header className={styles.navBar}>
       Seja bem-vindo{authenticated ? ' - ' : ''}
-      {profile?.firstName}
+      {profile?.firstName || profile?.username}
       <Dropdown
         className={styles.menu}
         menu={{
