@@ -1,0 +1,31 @@
+{
+  "name": "sample-react-project",
+  "private": true,
+  "version": "1.0.0",
+  "author": {
+    "email": "contato@codingsolutions.com.br",
+    "name": "Coding Solutions <Mateus Schenato>",
+    "url": "https://codingsolutions.com.br"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "path": "^0.12.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vite-plugin-env-compatible": "^1.1.1",
+    "vite-tsconfig-paths": "^4.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0"
+  }
+}
