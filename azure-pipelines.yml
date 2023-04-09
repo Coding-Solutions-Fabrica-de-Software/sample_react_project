@@ -1,0 +1,22 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+  - develop
+
+resources:
+  - repo: self
+
+variables:
+  tag: "$(Build.BuildId)"
+
+steps:
+  - task: Docker@2
+    inputs:
+      containerRegistry: "Gitlab connection"
+      repository: "org-coding-solutions/sample-react-project"
+      command: "buildAndPush"
+      Dockerfile: "Dockerfile"
+      tags: "latest"

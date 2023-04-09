@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": ["DOM", "DOM.Iterable", "ESNext", "WebWorker"],
     "allowJs": false,
     "baseUrl": "./",
     "skipLibCheck": true,
@@ -12,10 +12,18 @@
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "Node",
+    "outDir": "build",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "paths": {
+      "@features": ["src/Features"],
+      "@redux/*": ["src/Redux/*"],
+      "@redux": ["src/Redux"],
+      "@pages": ["src/Pages"],
+      "@data/*": ["src/Data/*"],
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
