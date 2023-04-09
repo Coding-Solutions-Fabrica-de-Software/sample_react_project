@@ -7,6 +7,7 @@
     "name": "Coding Solutions <Mateus Schenato>",
     "url": "https://codingsolutions.com.br"
   },
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
