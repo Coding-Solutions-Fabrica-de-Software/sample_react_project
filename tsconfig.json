@@ -18,10 +18,12 @@
     "jsx": "react-jsx",
     "paths": {
       "@features": ["src/Features"],
+      "@components": ["src/Components"],
       "@redux/*": ["src/Redux/*"],
       "@redux": ["src/Redux"],
       "@pages": ["src/Pages"],
       "@data/*": ["src/Data/*"],
+      "@layouts": ["src/Layouts"]
     }
   },
   "include": ["src"],

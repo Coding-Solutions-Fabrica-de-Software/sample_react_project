@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import NavBar from 'src/Layouts/navbar';
+import { NavBar } from '@layouts';
 import MainSwitch from './mainSwitch';
 
 export interface IShellHost {}

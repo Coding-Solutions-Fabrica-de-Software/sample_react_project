@@ -1,7 +1,7 @@
-import { FC, useCallback, useEffect } from 'react';
+import { FC, useCallback } from 'react';
 import { Dropdown, Layout, Menu, Space } from 'antd';
 import { useKeycloak } from '@react-keycloak/web';
-import { keycloak } from 'src/Features/Authentication';
+import { AuthService } from '@features';
 import styles from './navBar.module.css';
 import { DownOutlined } from '@ant-design/icons';
 
@@ -14,11 +14,11 @@ const NavBar: FC = () => {
   } = useKeycloak();
 
   const login = useCallback(() => {
-    keycloak.login();
+    AuthService.login();
   }, [initialized]);
 
   const logout = useCallback(() => {
-    keycloak.logout();
+    AuthService.logout();
   }, [initialized]);
 
   return (

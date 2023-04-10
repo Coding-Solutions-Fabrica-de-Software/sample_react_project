@@ -1,7 +1,7 @@
 import { useKeycloak } from '@react-keycloak/web';
 import { FC } from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
-import { Loading } from 'src/Components';
+import { Loading } from '@components';
 
 interface IAuthRouter {
   userRole?: string;
