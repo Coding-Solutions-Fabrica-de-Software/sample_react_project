@@ -1,8 +1,8 @@
 import { IBaseMovieDbResponse } from "@data/Base/IBaseMovieDbResponse";
-import { IMovieListInfo } from "@data/Services/MovieDB/Interfaces/Response/IMovieDetail";
+import { IListMovieDetail } from "@data/Services/MovieDB/Interfaces/Response/IListMovieDetail";
 
 export interface IPopularMoviesState {
     isLoading: boolean;
-    result: IBaseMovieDbResponse<IMovieListInfo>;
+    result: IBaseMovieDbResponse<IListMovieDetail>;
     error?: Error;
 }

@@ -1,11 +1,14 @@
 import { AxiosResponse } from "axios";
 import { IBaseMovieDbResponse } from "../../Base/IBaseMovieDbResponse";
 import { movieDbAPI } from "../../Config";
-import { IMovieListInfo } from "./Interfaces/Response/IMovieDetail";
+import { IListMovieDetail } from "./Interfaces/Response/IListMovieDetail";
 
 class MovieDbService {
-    getPopularMovies(page: number): Promise<AxiosResponse<IBaseMovieDbResponse<IMovieListInfo>>> {
+    getPopularMovies(page: number): Promise<AxiosResponse<IBaseMovieDbResponse<IListMovieDetail>>> {
         return movieDbAPI().get(`/movie/top_rated?page=${page}&language=pt-br`);
+    }
+    getMovieDetail(id: number): Promise<AxiosResponse<IBaseMovieDbResponse<IListMovieDetail>>> {
+        return movieDbAPI().get(`/movie/${id}?language=pt-br`);
     }
 }
 

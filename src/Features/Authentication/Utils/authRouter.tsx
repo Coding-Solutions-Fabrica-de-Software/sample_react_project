@@ -1,6 +1,7 @@
 import { useKeycloak } from '@react-keycloak/web';
 import { FC } from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
+import { Loading } from 'src/Components';
 
 interface IAuthRouter {
   userRole?: string;
@@ -9,16 +10,13 @@ interface IAuthRouter {
 export const AuthRouter: FC<IAuthRouter> = (props) => {
   const { keycloak, initialized } = useKeycloak();
 
-  if (initialized) {
-    if (!keycloak.authenticated) {
-      keycloak?.login();
-      return null;
-    } else if (props.userRole) {
-      if (!keycloak.hasRealmRole(props.userRole)) {
-        return <Navigate to={'/no-authorized'} replace />;
-      }
-    }
-  } else {
+  if (!initialized) {
+    return <Loading title="Autenticando..." />;
+  }
+
+  if (!keycloak.authenticated) {
+    keycloak?.login();
+  } else if (props.userRole && !keycloak.hasRealmRole(props.userRole)) {
     return <Navigate to={'/no-authorized'} replace />;
   }
 

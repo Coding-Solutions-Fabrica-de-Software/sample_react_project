@@ -1,4 +1,4 @@
-export interface IMovieListInfo {
+export interface IListMovieDetail {
     adult: boolean;
     backdrop_path: string;
     overview: string;
