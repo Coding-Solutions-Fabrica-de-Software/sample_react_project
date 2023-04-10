@@ -9,7 +9,8 @@ const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
       autoRefreshToken={true}
       initOptions={{
         onLoad: 'check-sso',
-        pkce: 's256',
+        pkceMethod: 'S256',
+        silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html',
       }}>
       {children}
     </ReactKeycloakProvider>
