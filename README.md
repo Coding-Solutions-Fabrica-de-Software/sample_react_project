@@ -2,7 +2,7 @@
 
 Este é um projeto de exemplo / estudos destinados á desenvolvedores que queiram aprimorar seus conhecimentos em React, Redux, Typescript, estruturação de pastas entre outras soluções apresentadas.
 
-# Padrão de Code Style
+# Formatação de Codigo padrão
 
 Iremos instalar as seguintes extensões no VS Code:
  ## [esbenp.prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
